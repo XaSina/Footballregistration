@@ -132,3 +132,19 @@ body {
   padding-bottom: 8px;
   margin-bottom: 10px;
 }
+/* ----- فونت فارسی خفن و ساده ----- */
+body, input, button {
+  font-family: 'Vazirmatn', sans-serif;
+  direction: rtl;
+  text-align: center;
+  letter-spacing: 0.3px;
+  color: #0ff;
+}
+
+/* برای تیترها (feel نئونی‌تر) */
+h1, h2, h3 {
+  font-weight: 700;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff;
+}
+
