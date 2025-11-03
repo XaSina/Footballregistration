@@ -1,0 +1,34 @@
+<html lang="fa" dir="rtl"></html>
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>تایید نهایی ثبت‌نام</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section class="register-summary">
+    <h2 class="neon-title">✅ ثبت‌نام شما با موفقیت انجام شد</h2>
+    <div class="summary-box">
+      <p><strong>نام و نام خانوادگی:</strong> <span id="fullname"></span></p>
+      <p><strong>شماره دانش‌آموزی:</strong> <span id="studentId"></span></p>
+      <p><strong>بیمه ورزشی:</strong> <span id="insurance"></span></p>
+      <p><strong>شناسنامه:</strong> <span id="idcard"></span></p>
+    </div>
+  </section>
+
+  <script>
+    document.getElementById('fullname').textContent = localStorage.getItem('fullname');
+    document.getElementById('studentId').textContent = localStorage.getItem('studentId');
+
+    const insuranceName = localStorage.getItem('insuranceName');
+    const idcardName = localStorage.getItem('idcardName');
+
+    document.getElementById('insurance').textContent = insuranceName ? insuranceName : 'فایلی انتخاب نشده';
+    document.getElementById('idcard').textContent = idcardName ? idcardName : 'فایلی انتخاب نشده';
+
+    // بعد از نمایش، اطلاعات رو پاک می‌کنیم (اختیاری)
+    localStorage.clear();
+  </script>
+</body>
+</html>

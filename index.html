@@ -1,0 +1,67 @@
+<html lang="fa" dir="rtl"></html>
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>ثبت‌نام کلاس 209</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section class="register-form">
+    <h2 class="neon-title">صفحه ثبت اطلاعات</h2>
+
+    <form id="registerForm">
+      <div class="input-group">
+        <label>نام و نام خانوادگی:</label>
+        <input type="text" id="fullname" required>
+      </div>
+
+      <div class="input-group">
+        <label>شماره دانش‌آموزی:</label>
+        <input type="text" id="studentId" required>
+      </div>
+
+      <div class="input-group">
+        <label>فایل بیمه ورزشی:</label>
+        <input type="file" id="insurance" accept=".jpg,.png,.pdf" required>
+      </div>
+
+      <div class="input-group">
+        <label>تصویر شناسنامه:</label>
+        <input type="file" id="idcard" accept=".jpg,.png,.pdf" required>
+      </div>
+      <img src="04.jpg" alt="شناسنامه" class="uploaded-image">
+      <img src="05.jpg" alt="بیمه ورزشی" class="uploaded-image">
+      <button type="submit" class="neon-btn">ثبت و رفتن به صفحه بعد</button>
+    </form>
+  </section>
+
+  <script>
+    const form = document.getElementById('registerForm');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const fullname = document.getElementById('fullname').value;
+      const studentId = document.getElementById('studentId').value;
+      const insurance = document.getElementById('insurance').files[0];
+      const idcard = document.getElementById('idcard').files[0];
+
+      // ذخیره‌سازی موقت در مرورگر
+      localStorage.setItem('fullname', fullname);
+      localStorage.setItem('studentId', studentId);
+
+      if (insurance) {
+        localStorage.setItem('insuranceName', insurance.name);
+      }
+      if (idcard) {
+        localStorage.setItem('idcardName', idcard.name);
+      }
+
+      // انتقال به صفحه دوم
+      window.location.href = 'next-page.html';
+    });
+  </script>
+</body>
+</html>
+  </form>
+</section>
